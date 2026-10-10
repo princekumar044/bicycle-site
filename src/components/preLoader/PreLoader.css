@@ -1,0 +1,89 @@
+.preloader-wrapper {
+  background-color: #000;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.bike-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bike {
+  stroke: white;
+  fill: none;
+  stroke-width: 6;
+  animation: bike-frame-fade 2s ease-in-out infinite;
+}
+
+.wheel {
+  stroke: red;
+  animation: spin 2s linear infinite;
+  transform-origin: center;
+}
+
+.frame {
+  stroke: white;
+}
+
+.pedal {
+  fill: red;
+  stroke: red;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 15px;
+  text-align: center;
+
+  letter-spacing: 2px;
+  animation: fadeInUp 1.5s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bike-frame-fade {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    r: 10;
+  }
+  50% {
+    r: 14;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
